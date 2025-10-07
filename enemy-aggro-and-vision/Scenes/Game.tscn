@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://digfkan041vvr"]
+
+[ext_resource type="PackedScene" uid="uid://bdv6h0wsr0w0r" path="res://Scenes/Player.tscn" id="1_iukft"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iukft"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl6un"]
+albedo_color = Color(0.268668, 0.186424, 0.0988705, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iukft"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Game" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_iukft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19074, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.2951)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, -0.1, 0)
+mesh = SubResource("BoxMesh_iukft")
+surface_material_override/0 = SubResource("StandardMaterial3D_gl6un")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, -0.1, 0)
+shape = SubResource("ConcavePolygonShape3D_iukft")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2, 0)

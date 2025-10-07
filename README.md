@@ -19,6 +19,7 @@ This is going to be a repo consisting of several projects, likely in Unity and G
 ## Potential Projects
 ### Enemy Chasing the player
 This was something I attempted to do for a GameDev Game Jam
+
 **Required Knowledge** - The NavMesh stuff in Godot
 
 ### Enemy Information System
@@ -26,4 +27,5 @@ Multiple Enemies, when one spots the player they inform the others. This could a
 
 ### Rudamentary Traffic System
 Multiple cars driving around a grid, and they respect a series of traffic rules (stop signs, simple right of way, they choose random destinations)
+
 **Required Knowledge** - The NavMesh stuff in Godot

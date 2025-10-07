@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://61o26jfqpemg"]
+
+[ext_resource type="Script" uid="uid://d4lprgwyghf21" path="res://Scripts/DetectionRadius.gd" id="1_m1htj"]
+[ext_resource type="Script" uid="uid://cmgl6ttockwxh" path="res://Scripts/PlayerDetector.gd" id="2_wovta"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7fd37"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7fd37"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7fd37"]
+
+[node name="Enemy" type="CharacterBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_7fd37")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_7fd37")
+
+[node name="Detection Radius" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_mask = 255
+script = ExtResource("1_m1htj")
+
+[node name="DetectionShape" type="CollisionShape3D" parent="Detection Radius"]
+shape = SubResource("SphereShape3D_7fd37")
+script = ExtResource("2_wovta")

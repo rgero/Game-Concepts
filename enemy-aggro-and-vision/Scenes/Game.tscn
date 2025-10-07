@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://digfkan041vvr"]
+[gd_scene load_steps=6 format=3 uid="uid://digfkan041vvr"]
 
 [ext_resource type="PackedScene" uid="uid://bdv6h0wsr0w0r" path="res://Scenes/Player.tscn" id="1_iukft"]
+[ext_resource type="PackedScene" uid="uid://61o26jfqpemg" path="res://Scenes/Enemy.tscn" id="2_gl6un"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_iukft"]
 
@@ -31,3 +32,6 @@ shape = SubResource("ConcavePolygonShape3D_iukft")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("2_gl6un")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3907, 0, 0)

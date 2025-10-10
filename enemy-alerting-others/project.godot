@@ -26,6 +26,7 @@ project/assembly_name="Enemy Aggro and Vision"
 [global_group]
 
 Player=""
+Enemy=""
 
 [input]
 

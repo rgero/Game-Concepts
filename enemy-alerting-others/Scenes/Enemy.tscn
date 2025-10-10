@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://61o26jfqpemg"]
 
-[ext_resource type="Script" uid="uid://d4lprgwyghf21" path="res://Scripts/DetectionRadius.gd" id="1_m1htj"]
 [ext_resource type="Script" uid="uid://jclmp3jxilvv" path="res://Scripts/EnemyStatus.gd" id="1_xeo28"]
 [ext_resource type="Script" uid="uid://cmgl6ttockwxh" path="res://Scripts/PlayerDetector.gd" id="2_wovta"]
+[ext_resource type="Script" uid="uid://id6nn3jcc7ty" path="res://Scripts/RadiusManager.gd" id="2_xeo28"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7fd37"]
 
@@ -14,7 +14,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kpr8r"]
 
-[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("bodyMesh")]
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("bodyMesh") groups=["Enemy"]]
 script = ExtResource("1_xeo28")
 awareColor = Color(1, 1, 0, 1)
 alertedColor = Color(0.990405, 0.0856147, 1.15514e-06, 1)
@@ -30,17 +30,25 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wovta")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_7fd37")
 
-[node name="Detection Radius" type="Area3D" parent="."]
+[node name="Radius Manager" type="Node3D" parent="."]
+script = ExtResource("2_xeo28")
+detectionRadius = 10.0
+alertRadius = 30.0
+
+[node name="Detection Radius" type="Area3D" parent="Radius Manager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_mask = 255
-script = ExtResource("1_m1htj")
-aggressionRadius = 10.0
 
-[node name="DetectionShape" type="CollisionShape3D" parent="Detection Radius"]
+[node name="Detection Shape" type="CollisionShape3D" parent="Radius Manager/Detection Radius"]
 shape = SubResource("SphereShape3D_7fd37")
 script = ExtResource("2_wovta")
 
-[node name="Alert Radius" type="Area3D" parent="."]
+[node name="Alert Radius" type="Area3D" parent="Radius Manager"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Alert Radius"]
+[node name="Alert Shape" type="CollisionShape3D" parent="Radius Manager/Alert Radius"]
 shape = SubResource("SphereShape3D_kpr8r")
+
+[node name="WarningTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="Radius Manager/Alert Radius" to="." method="_on_alert_radius_body_entered"]

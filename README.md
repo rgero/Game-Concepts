@@ -29,3 +29,6 @@ Multiple Enemies, when one spots the player they inform the others. This could a
 Multiple cars driving around a grid, and they respect a series of traffic rules (stop signs, simple right of way, they choose random destinations)
 
 **Required Knowledge** - The NavMesh stuff in Godot
+
+### Fog of War
+The mechanic known in all RTS games

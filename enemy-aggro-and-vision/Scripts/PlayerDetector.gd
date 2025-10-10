@@ -11,8 +11,10 @@ var spaceState: PhysicsDirectSpaceState3D
 
 func _ready() -> void:
 	# Get the Material
-	meshMaterial = parentMesh.get_active_material(0) as StandardMaterial3D
-	assert(meshMaterial != null, "MeshInstance3D has no material assigned!")
+	var mat = parentMesh.get_active_material(0) as StandardMaterial3D
+	assert(mat != null, "MeshInstance3D has no material assigned!")
+	meshMaterial = mat.duplicate(true) as StandardMaterial3D # deep duplicate
+	parentMesh.set_surface_override_material(0, meshMaterial)
 	
 	spaceState = get_world_3d().get_direct_space_state()
 	assert(spaceState != null, "Space State is fucked")

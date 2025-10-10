@@ -4,27 +4,29 @@ This is going to be a repo consisting of several projects, likely in Unity and G
 <!-- omit in toc -->
 ## Table of Contents
 - [Completed Projects](#completed-projects)
-  - [Project 1 - Player Detection](#project-1---player-detection)
+  - [Project 01 - Player Detection](#project-01---player-detection)
+  - [Project 02 - Enemy Information System](#project-02---enemy-information-system)
 - [Potential Projects](#potential-projects)
   - [Enemy Chasing the player](#enemy-chasing-the-player)
-  - [Enemy Information System](#enemy-information-system)
   - [Rudamentary Traffic System](#rudamentary-traffic-system)
   - [Fog of War](#fog-of-war)
 
 ## Completed Projects
-### Project 1 - Player Detection
+### Project 01 - Player Detection
 **Engine** - Godot 4
 **Exercise** - I wanted to make a simple scene where an enemy game object could detect the player and would react only if it was able to see them.
 **Directory** - `enemy-aggro-and-vision`
+
+### Project 02 - Enemy Information System
+Multiple Enemies, when one spots the player they inform the others. This could also be done with a Camera
+**Engine** - Godot 4
+**Directory** - `enemy-alerting-others`
 
 ## Potential Projects
 ### Enemy Chasing the player
 This was something I attempted to do for a GameDev Game Jam
 
 **Required Knowledge** - The NavMesh stuff in Godot
-
-### Enemy Information System
-Multiple Enemies, when one spots the player they inform the others. This could also be done with a Camera
 
 ### Rudamentary Traffic System
 Multiple cars driving around a grid, and they respect a series of traffic rules (stop signs, simple right of way, they choose random destinations)

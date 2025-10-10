@@ -7,12 +7,13 @@ var meshMaterial: StandardMaterial3D
 @export var alertedColor: Color
 @export var sleepingColor: Color
 
-@onready var bodyMesh: MeshInstance3D = $Mesh
+@export var bodyMesh: MeshInstance3D
 
 func _ready() -> void:
-	# Get the Material
-	meshMaterial = bodyMesh.get_active_material(0) as StandardMaterial3D
-	assert(meshMaterial != null, "MeshInstance3D has no material assigned!")
+	var mat := bodyMesh.get_active_material(0) as StandardMaterial3D
+	assert(mat != null, "MeshInstance3D has no material assigned!")
+	meshMaterial = mat.duplicate(true) as StandardMaterial3D
+	bodyMesh.set_surface_override_material(0, meshMaterial)
 	
 	# By Default make it sleep
 	meshMaterial.albedo_color = sleepingColor

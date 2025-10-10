@@ -14,11 +14,12 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kpr8r"]
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("bodyMesh")]
 script = ExtResource("1_xeo28")
 awareColor = Color(1, 1, 0, 1)
 alertedColor = Color(0.990405, 0.0856147, 1.15514e-06, 1)
 sleepingColor = Color(0.501407, 0.501406, 0.501406, 1)
+bodyMesh = NodePath("Mesh")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

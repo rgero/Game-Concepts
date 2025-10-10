@@ -1,17 +1,14 @@
 extends CollisionShape3D
 
 @onready var parentArea := $".."
-@onready var parentMesh := $"../../Mesh"
 @onready var enemyNode: CharacterBody3D = $"../.."
 
 var spaceState: PhysicsDirectSpaceState3D
 var wasWarned: bool
-var needChange: bool
 
 func _ready() -> void:
 	spaceState = get_world_3d().get_direct_space_state()
 	assert(spaceState != null, "Space State is fucked")
-	needChange = false
 	
 func _physics_process(delta: float) -> void:
 	var playerAround: bool = ProcessBodyTracking()

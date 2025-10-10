@@ -18,8 +18,8 @@ This is going to be a repo consisting of several projects, likely in Unity and G
 **Directory** - `enemy-aggro-and-vision`
 
 ### Project 02 - Enemy Information System
-Multiple Enemies, when one spots the player they inform the others. This could also be done with a Camera
 **Engine** - Godot 4
+**Exercise** - Multiple Enemies, when one spots the player they inform the others. This could also be done with a Camera. The enemy should be "warned" for a couple seconds.
 **Directory** - `enemy-alerting-others`
 
 ## Potential Projects

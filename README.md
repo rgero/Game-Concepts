@@ -1,4 +1,5 @@
 
+
 This is going to be a repo consisting of several projects, likely in Unity and Godot, that exhibit a game concept that I want to play around with implementing. The goal of the smaller projects is to come up with solutions. Because of this, they might not be the most elegant or optimized solutions. This will be particularly true for Godot since that's the engine I'm currently learning.
 
 <!-- omit in toc -->
@@ -13,14 +14,14 @@ This is going to be a repo consisting of several projects, likely in Unity and G
 
 ## Completed Projects
 ### Project 01 - Player Detection
-**Engine** - Godot 4
-**Exercise** - I wanted to make a simple scene where an enemy game object could detect the player and would react only if it was able to see them.
-**Directory** - `enemy-aggro-and-vision`
+- **Engine** - Godot 4
+- **Exercise** - I wanted to make a simple scene where an enemy game object could detect the player and would react only if it was able to see them.
+- **Directory** - `enemy-aggro-and-vision`
 
 ### Project 02 - Enemy Information System
-**Engine** - Godot 4
-**Exercise** - Multiple Enemies, when one spots the player they inform the others. This could also be done with a Camera. The enemy should be "warned" for a couple seconds.
-**Directory** - `enemy-alerting-others`
+- **Engine** - Godot 4
+- **Exercise** - Multiple Enemies, when one spots the player they inform the others. This could also be done with a Camera. The enemy should be "warned" for a couple seconds.
+- **Directory** - `enemy-alerting-others`
 
 ## Potential Projects
 ### Enemy Chasing the player

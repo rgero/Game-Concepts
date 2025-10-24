@@ -1,5 +1,6 @@
 
 
+
 This is going to be a repo consisting of several projects, likely in Unity and Godot, that exhibit a game concept that I want to play around with implementing. The goal of the smaller projects is to come up with solutions. Because of this, they might not be the most elegant or optimized solutions. This will be particularly true for Godot since that's the engine I'm currently learning.
 
 <!-- omit in toc -->
@@ -36,3 +37,16 @@ Multiple cars driving around a grid, and they respect a series of traffic rules 
 
 ### Fog of War
 The mechanic known in all RTS games. It sounds like it could be a fun thing to do in GoDot.
+
+### Brotato Clone
+I experimented with this a little bit with Unity in the past, however with my comfort in Godot growing, I feel that this would be a good challenge. This might be worth its own repo.
+**Goals**
+- A 2D player that the users moves around the screen with WASD
+- A range that is influenced by stats so it can be increased and decreased
+- A weapons array so the player can have up to six.
+  - Maybe each one has their own range?
+ - Enemies with a variety of Hit Points.
+ 
+
+
+

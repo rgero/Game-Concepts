@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtada15al0ghr"]
+
+[ext_resource type="PackedScene" uid="uid://drprt51n1y88y" path="res://Scenes/UI.tscn" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://byvwsrq4t78lx" path="res://Scripts/player.gd" id="2_qxrlw"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("1_ebmjs")]
+
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("bank_label", "result_label")]
+script = ExtResource("2_qxrlw")
+bank_label = NodePath("../CanvasLayer/UI/VBoxContainer/Bank Label")
+result_label = NodePath("../CanvasLayer/UI/VBoxContainer/Result Label")
+
+[connection signal="pressed" from="CanvasLayer/UI/HBoxContainer/Flip Coin" to="Player" method="_on_flip_coin_pressed"]
+
+[editable path="CanvasLayer/UI"]

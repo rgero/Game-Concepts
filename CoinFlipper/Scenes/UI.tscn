@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://drprt51n1y88y"]
+[gd_scene load_steps=2 format=3 uid="uid://drprt51n1y88y"]
+
+[sub_resource type="Theme" id="Theme_3iaii"]
+default_font_size = 36
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -52,8 +55,23 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Flip Coin" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "FLIP THAT COIN
 "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Bank Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_3iaii")
+text = "$0.00"
+
+[node name="Result Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_3iaii")

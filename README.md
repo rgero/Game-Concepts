@@ -40,6 +40,7 @@ The mechanic known in all RTS games. It sounds like it could be a fun thing to d
 
 ### Brotato Clone
 I experimented with this a little bit with Unity in the past, however with my comfort in Godot growing, I feel that this would be a good challenge. This might be worth its own repo.
+
 **Goals**
 - A 2D player that the users moves around the screen with WASD
 - A range that is influenced by stats so it can be increased and decreased
